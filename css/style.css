@@ -1,0 +1,127 @@
+body,
+div {
+	padding: 0;
+	margin:0;
+}
+
+body {	
+	background: #050210;
+}
+
+#circle0 {
+	position: relative;
+	border-radius: 50%;
+	width: 600px;
+	height: 600px;
+	padding: 50px;
+    margin: 300px auto 0;
+    background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+    animation: colors 0.7s linear infinite;
+
+
+}
+#circle0::before,
+#circle0::after {
+	border-radius: 50%;
+	content: ' ';
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+    background-size: 710%;
+    width: 700px;
+    height: 700px;
+    z-index: -1;
+	}
+
+#circle0::after {
+	filter: blur(130px);
+	overflow: hidden;
+}
+
+@keyframes colors
+	{
+		0%{
+			transform: rotate(0deg);
+		}
+		10%{
+			transform: rotate(36deg);
+		}
+		20%{
+			transform: rotate(72deg);
+		}
+		30%{
+			transform: rotate(108deg);
+		}
+		40%{
+			transform: rotate(144deg);
+		}
+		50%{
+			transform: rotate(180deg);
+		}
+		60%{
+			transform: rotate(218deg);
+		}
+		70%{
+			transform: rotate(234deg);
+		}
+		80%{
+			transform: rotate(290deg);
+		}
+		90%{
+			transform: rotate(324deg)
+		}
+		100%{
+			transform: rotate(360deg)
+		}		
+	
+}
+
+
+#circle1 {
+    height: 200px;
+    width: 200px;
+    padding:200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #050210;
+    overflow: hidden;
+}
+
+#circle1 div{
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  background: #0c0526;
+  transition: fade-out;
+
+}
+
+#circle1 div:first-of-type{
+  animation: circleScale 2s ease-out infinite;
+  animation-delay:1s;
+  z-index:9;
+}
+
+#circle1 div:nth-of-type(2){
+  top: -200px;
+  left: 0;
+  animation: circleScale 2s ease-out infinite;
+  z-index: 10;
+}
+
+
+@keyframes circleScale {
+	10% {
+		transform: scale(0.2); 
+		background: rgba(18,12,38,1);
+		z-index: 20;
+	}
+	100% {
+		background: rgba(14,8,34,1);
+  		transform: scale(3.6);
+  		z-index: 8;
+  	}
+}
